@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegistroController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,6 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/perfil', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/admin/perfil', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/admin/perfil', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/admin/registro', [RegistroController::class, 'index'])->name('registro.index');
 });
 
 Route::resource('admin/registro/', RegistroController::class);
