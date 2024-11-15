@@ -2,27 +2,24 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class registro extends Model
+class Registro extends Model
 {
-    use HasFactory;
-
-    protected $table = 'registro';
+    protected $table = 'registro'; 
 
     protected $fillable = [
+        'cedula',
         'nombre',
         'apellido',
-        'cedula',
         'edad',
-        'email',
         'telefono',
-        'ocupacion',
-        'grado',
+        'email',
         'municipio',
         'parroquia',
-        'categoria',
-        'descripcion',
+        'ocupacion',
+        'grado',
+        'categoria_p',
+        'descripcion_p',
     ];
 }
