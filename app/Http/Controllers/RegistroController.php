@@ -37,7 +37,7 @@ class RegistroController extends Controller
                 'apellido' => 'required|string',
                 'edad' => 'required|date',
                 'email' => 'required|email|max:255',
-                'telefono' => 'required|string|max:20',
+                'telefono' => 'required|string|max:11',
                 'municipio' => 'required|not_in:',
                 'parroquia' => 'required|not_in:',
                 'ocupacion' => 'required|string',
@@ -46,8 +46,10 @@ class RegistroController extends Controller
                 'descripcion_p' => 'required|string',
             ],
             [
+
                 "required" => 'Rellenar el campo :attribute es obligatorio.',
                 "categoria.not_in" => 'Por favor, seleccione una categoría válida.',
+                'telefono.max' => 'El número de teléfono no puede exceder los 11 caracteres.',
             ]
         );
 
@@ -128,5 +130,6 @@ class RegistroController extends Controller
     {
         $registros = Registro::all();
         return view('admin.registro', compact('registros'));
+
     }
 }

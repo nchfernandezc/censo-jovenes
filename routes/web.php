@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PDFController;
@@ -27,5 +28,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('admin/registro/', RegistroController::class);
+
+route::get('admin/dashboard', [DashboardController::class, "index"]);
 
 require __DIR__.'/auth.php';
