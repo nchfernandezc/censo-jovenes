@@ -6,7 +6,13 @@
         <div class="card">
             <div class="card-body">
                 <p class="card-title">Registro de Usuarios</p>
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <div class="table-responsive">
+                    @if ($registros->isNotEmpty())
                     <table id="registro" class="display expandable-table w-100" style="width:100%">
                         <thead>
                             <tr>
@@ -19,6 +25,7 @@
                                 <th>Email</th>
                                 <th>Municipio</th>
                                 <th>Parroquia</th>
+                                <th>Acciones</th>
                                 <th></th> 
                             </tr>
                         </thead>
@@ -34,21 +41,33 @@
                                 <td>{{ $registro->email }}</td>
                                 <td>{{ $registro->municipio }}</td>
                                 <td>{{ $registro->parroquia }}</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-inverse-success btn-icon" onclick="window.location.href='{{ route('registro.edit', $registro->id) }}'">
+                                        <i class="ti-pencil"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-inverse-dark btn-icon" onclick="window.open('/admin/generar-pdf/{{ $registro->id }}', '_blank')">
+                                        <i class="ti-printer btn-icon-append"></i> 
+                                    </button>
+                                </td>
                                 <td class="details-control text-center"><i class="fas fa-plus-circle"></i></td> 
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    @else
+                        {{-- Muestra un mensaje adicional si no hay registros (opcional) --}}
+                        <p class="text-center">No hay datos para mostrar.</p>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+@if ($registros->isNotEmpty())
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
-
 <script type="text/javascript">
     $(document).ready(function() {
         function format(d) {
@@ -102,21 +121,36 @@
         var table = $('#registro').DataTable({
             "data": @json($registros), 
             "columns": [
-                { "data": "id" },
-                { "data": "cedula" },
-                { "data": "nombre" },
-                { "data": "apellido" },
-                { "data": "edad" },
-                { "data": "telefono" },
-                { "data": "email" },
-                { "data": "municipio" },
-                { "data": "parroquia" },
-                {
-                    "className": 'details-control text-center',
-                    "orderable": false,
-                    "data": null,
-                    "defaultContent": '<i class="fas fa-plus-circle"></i>' 
+            { "data": "id" },
+            { "data": "cedula" },
+            { "data": "nombre" },
+            { "data": "apellido" },
+            { "data": "edad" },
+            { "data": "telefono" },
+            { "data": "email" },
+            { "data": "municipio" },
+            { "data": "parroquia" },
+            {
+                "data": null,
+                "className": "text-center",
+                "orderable": false,
+                "render": function(data, type, row) {
+                return `
+                    <button type="button" class="btn btn-inverse-success btn-icon" onclick="window.location.href='{{ route('registro.edit', $registro->id) }}'">
+                        <i class="ti-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-inverse-dark btn-icon" onclick="window.open('/admin/generar-pdf/${row.id}', '_blank')">
+                    <i class="ti-printer btn-icon-append"></i>
+                    </button>
+                `;
                 }
+            },
+            {
+                "className": 'details-control text-center',
+                "orderable": false,
+                "data": null,
+                "defaultContent": '<i class="fas fa-plus-circle"></i>' 
+            }
             ],
             "order": [[1, 'asc']],
             "paging": false,
@@ -140,4 +174,6 @@
         });
     });
 </script>
+
+@endif
 @endsection

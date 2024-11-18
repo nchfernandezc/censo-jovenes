@@ -19,3 +19,6 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+resources/views/admin/registro-pdf.blade copy 2.php
+resources/views/admin/registro-pdf.blade copy.php
+resources/views/admin/registro.blade copy.php
