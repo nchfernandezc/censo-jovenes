@@ -91,10 +91,10 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Numero de teléfono</label>
+                    <label class="col-sm-3 col-form-label">Número de teléfono</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control {{$errors->has('telefono')?'is-invalid':''}}" name="telefono" id="telefono" value="{{isset($registro->telefono)?$registro->telefono:old('telefono')}}">
-                      {!!$errors->first('telefono','<div class="invalid-feedback">:message</div>')!!}
+                      <input type="text" class="form-control {{$errors->has('telefono') ? 'is-invalid' : ''}}" name="telefono" id="telefono" value="{{ isset($registro->telefono) ? $registro->telefono : old('telefono') }}">
+                      {!! $errors->first('telefono', '<div class="invalid-feedback">:message</div>') !!}
                       <div class="invalid-feedback"></div>
                     </div>
                   </div>
