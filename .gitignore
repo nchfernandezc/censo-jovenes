@@ -22,3 +22,5 @@ yarn-error.log
 resources/views/admin/registro-pdf.blade copy 2.php
 resources/views/admin/registro-pdf.blade copy.php
 resources/views/admin/registro.blade copy.php
+resources/views/admin/registro/edit.blade copy.php
+resources/views/admin/registro.blade copy 2.php

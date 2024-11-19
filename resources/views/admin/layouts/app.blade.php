@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ asset('vendors/select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/ti-icons/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/css/vendor.bundle.base.css') }}">
@@ -36,6 +38,7 @@
     <script src="{{ asset('vendors/datatables.net/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
     <script src="{{ asset('build/assets/js/dataTables.select.min.js') }}"></script>
+    <script src="{{ asset('build/assets/js/file-upload.js') }}"></script>
     <script src="{{ asset('build/assets/js/off-canvas.js') }}"></script>
     <script src="{{ asset('build/assets/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('build/assets/js/template.js') }}"></script>
@@ -43,6 +46,5 @@
     <script src="{{ asset('build/assets/js/todolist.js') }}"></script>
     <script src="{{ asset('build/assets/js/dashboard.js') }}"></script>
     <script src="{{ asset('build/assets/js/Chart.roundedBarCharts.js') }}"></script>
-
 </body>
 </html>

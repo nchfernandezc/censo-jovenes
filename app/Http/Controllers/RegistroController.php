@@ -128,8 +128,39 @@ class RegistroController extends Controller
 
     public function vista()
     {
-        $registros = Registro::all();
+        $registros = Registro::all()->map(function ($registro) {
+            $registro->edad = \Carbon\Carbon::parse($registro->edad)->age;
+            return $registro;
+        });
         return view('admin.registro', compact('registros'));
-
     }
+
+    public function filtrar()
+    {
+        $parroquias = Registro::select('parroquia')->distinct()->pluck('parroquia');
+        $municipios = Registro::select('municipio')->distinct()->pluck('municipio');
+        $ocupaciones = Registro::select('ocupacion')->distinct()->pluck('ocupacion');
+        $grados = Registro::select('grado')->distinct()->pluck('grado');
+        $categorias = Registro::select('categoria_p')->distinct()->pluck('categoria_p');
+    
+        return view('admin/registro.filtros', compact('parroquias', 'municipios', 'ocupaciones', 'grados', 'categorias'));
+    }
+
+    public function mostrarBusqueda()
+    {
+        return view('admin/registro.buscar'); 
+    }
+
+    public function realizarBusqueda(Request $request)
+    {
+        $registro = Registro::find($request->id);
+    
+        if ($registro) {
+            return redirect()->route('generar.pdf', ['id' => $registro->id]);
+        }
+    
+        return back()->with('status', 'search-not-found')->with('error', 'Registro no encontrado.');
+    }
+    
+
 }

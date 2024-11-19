@@ -3,9 +3,10 @@
 @section('content')
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-md-12 grid-margin stretch-card">
+        <div class="col-12 grid-margin">
+            <div class="card">
             <div class="card-body">
-            <h4 class="card-title">Ingreso de datos</h4>
+            <h4 class="card-title">Edición de Datos</h4>
             @if (session('error'))
                 <div class="alert alert-danger">
                     {{ session('error') }}
@@ -98,7 +99,7 @@
                     <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Grado de instrucción</label>
                     <div class="col-sm-9">
-                        <select class="form-control {{$errors->has('grado')?'is-invalid':''}}" name="grado" id="grado">
+                        <select class="form-control js-example-basic-single {{$errors->has('grado')?'is-invalid':''}}" name="grado" id="grado">
                             <option value="">Seleccione</option>
                             <option value="Bachiller" {{ (isset($registro->grado) && $registro->grado == 'Bachiller') ? 'selected' : '' }}>Bachiller</option>
                             <option value="Estudiante" {{ (isset($registro->grado) && $registro->grado == 'Estudiante') ? 'selected' : '' }}>Estudiante</option>
@@ -119,29 +120,29 @@
                     <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Municipio</label>
                     <div class="col-sm-9">
-                        <select name="municipio" class="form-control {{$errors->has('municipio') ? 'is-invalid' : ''}}">
+                        <select name="municipio" class="form-control js-example-basic-single {{$errors->has('municipio') ? 'is-invalid' : ''}}">
                         <option value="">Municipio</option>
-                        <option value="almirante_padilla" {{ (isset($registro->municipio) && $registro->municipio == 'almirante_padilla') ? 'selected' : '' }}>Almirante Padilla</option>
-                        <option value="baralt" {{ (isset($registro->municipio) && $registro->municipio == 'baralt') ? 'selected' : '' }}>Baralt</option>
-                        <option value="cabimas" {{ (isset($registro->municipio) && $registro->municipio == 'cabimas') ? 'selected' : '' }}>Cabimas</option>
-                        <option value="catatumbo" {{ (isset($registro->municipio) && $registro->municipio == 'catatumbo') ? 'selected' : '' }}>Catatumbo</option>
-                        <option value="colon" {{ (isset($registro->municipio) && $registro->municipio == 'colon') ? 'selected' : '' }}>Colón</option>
-                        <option value="francisco_javier_pulgar" {{ (isset($registro->municipio) && $registro->municipio == 'francisco_javier_pulgar') ? 'selected' : '' }}>Francisco Javier Pulgar</option>
-                        <option value="guajira" {{ (isset($registro->municipio) && $registro->municipio == 'guajira') ? 'selected' : '' }}>Guajira</option>
-                        <option value="jesus_enrique_lossada" {{ (isset($registro->municipio) && $registro->municipio == 'jesus_enrique_lossada') ? 'selected' : '' }}>Jesús Enrique Lossada</option>
-                        <option value="jesus_maria_semprum" {{ (isset($registro->municipio) && $registro->municipio == 'jesus_maria_semprum') ? 'selected' : '' }}>Jesús María Semprúm</option>
-                        <option value="la_canada_de_urdaneta" {{ (isset($registro->municipio) && $registro->municipio == 'la_canada_de_urdaneta') ? 'selected' : '' }}>La Cañada de Urdaneta</option>
-                        <option value="lagunillas" {{ (isset($registro->municipio) && $registro->municipio == 'lagunillas') ? 'selected' : '' }}>Lagunillas</option>
-                        <option value="machiques_de_perija" {{ (isset($registro->municipio) && $registro->municipio == 'machiques_de_perija') ? 'selected' : '' }}>Machiques de Perijá</option>
-                        <option value="mara" {{ (isset($registro->municipio) && $registro->municipio == 'mara') ? 'selected' : '' }}>Mara</option>
-                        <option value="maracaibo" {{ (isset($registro->municipio) && $registro->municipio == 'maracaibo') ? 'selected' : '' }}>Maracaibo</option>
-                        <option value="miranda" {{ (isset($registro->municipio) && $registro->municipio == 'miranda') ? 'selected' : '' }}>Miranda</option>
-                        <option value="rosario_de_perija" {{ (isset($registro->municipio) && $registro->municipio == 'rosario_de_perija') ? 'selected' : '' }}>Rosario de Perijá</option>
-                        <option value="san_francisco" {{ (isset($registro->municipio) && $registro->municipio == 'san_francisco') ? 'selected' : '' }}>San Francisco</option>
-                        <option value="santa_rita" {{ (isset($registro->municipio) && $registro->municipio == 'santa_rita') ? 'selected' : '' }}>Santa Rita</option>
-                        <option value="simon_bolivar" {{ (isset($registro->municipio) && $registro->municipio == 'simon_bolivar') ? 'selected' : '' }}>Simón Bolívar</option>
-                        <option value="sucre" {{ (isset($registro->municipio) && $registro->municipio == 'sucre') ? 'selected' : '' }}>Sucre</option>
-                        <option value="valmore_rodriguez" {{ (isset($registro->municipio) && $registro->municipio == 'valmore_rodriguez') ? 'selected' : '' }}>Valmore Rodríguez</option>
+                        <option value="Almirante Padilla" {{ (isset($registro->municipio) && $registro->municipio == 'Almirante Padilla') ? 'selected' : '' }}>Almirante Padilla</option>
+                        <option value="Baralt" {{ (isset($registro->municipio) && $registro->municipio == 'Baralt') ? 'selected' : '' }}>Baralt</option>
+                        <option value="Cabimas" {{ (isset($registro->municipio) && $registro->municipio == 'Cabimas') ? 'selected' : '' }}>Cabimas</option>
+                        <option value="Catatumbo" {{ (isset($registro->municipio) && $registro->municipio == 'Catatumbo') ? 'selected' : '' }}>Catatumbo</option>
+                        <option value="Colón" {{ (isset($registro->municipio) && $registro->municipio == 'Colón') ? 'selected' : '' }}>Colón</option>
+                        <option value="Francisco Javier Pulgar" {{ (isset($registro->municipio) && $registro->municipio == 'Francisco Javier Pulgar') ? 'selected' : '' }}>Francisco Javier Pulgar</option>
+                        <option value="Guajira" {{ (isset($registro->municipio) && $registro->municipio == 'Guajira') ? 'selected' : '' }}>Guajira</option>
+                        <option value="Jesús Enrique Lossada" {{ (isset($registro->municipio) && $registro->municipio == 'Jesús Enrique Lossada') ? 'selected' : '' }}>Jesús Enrique Lossada</option>
+                        <option value="Jesús María Semprúm" {{ (isset($registro->municipio) && $registro->municipio == 'Jesús María Semprúm') ? 'selected' : '' }}>Jesús María Semprúm</option>
+                        <option value="La Cañada de Urdaneta" {{ (isset($registro->municipio) && $registro->municipio == 'La Cañada de Urdaneta') ? 'selected' : '' }}>La Cañada de Urdaneta</option>
+                        <option value="Lagunillas" {{ (isset($registro->municipio) && $registro->municipio == 'Lagunillas') ? 'selected' : '' }}>Lagunillas</option>
+                        <option value="Machiques de Perijá" {{ (isset($registro->municipio) && $registro->municipio == 'Machiques de Perijá') ? 'selected' : '' }}>Machiques de Perijá</option>
+                        <option value="Mara" {{ (isset($registro->municipio) && $registro->municipio == 'Mara') ? 'selected' : '' }}>Mara</option>
+                        <option value="Maracaibo" {{ (isset($registro->municipio) && $registro->municipio == 'Maracaibo') ? 'selected' : '' }}>Maracaibo</option>
+                        <option value="Miranda" {{ (isset($registro->municipio) && $registro->municipio == 'Miranda') ? 'selected' : '' }}>Miranda</option>
+                        <option value="Rosario de Perijá" {{ (isset($registro->municipio) && $registro->municipio == 'Rosario de Perijá') ? 'selected' : '' }}>Rosario de Perijá</option>
+                        <option value="San Francisco" {{ (isset($registro->municipio) && $registro->municipio == 'San Francisco') ? 'selected' : '' }}>San Francisco</option>
+                        <option value="Santa Rita" {{ (isset($registro->municipio) && $registro->municipio == 'Santa Rita') ? 'selected' : '' }}>Santa Rita</option>
+                        <option value="Simón Bolívar" {{ (isset($registro->municipio) && $registro->municipio == 'Simón Bolívar') ? 'selected' : '' }}>Simón Bolívar</option>
+                        <option value="Sucre" {{ (isset($registro->municipio) && $registro->municipio == 'Sucre') ? 'selected' : '' }}>Sucre</option>
+                        <option value="Valmore Rodríguez" {{ (isset($registro->municipio) && $registro->municipio == 'Valmore Rodríguez') ? 'selected' : '' }}>Valmore Rodríguez</option>
                         </select>
                         {!! $errors->first('municipio', '<div class="invalid-feedback">:message</div>') !!}
                     </div>
@@ -151,117 +152,117 @@
                     <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Parroquia</label>
                     <div class="col-sm-9">
-                        <select name="parroquia" class="form-control {{$errors->has('parroquia') ? 'is-invalid' : ''}}" value="{{isset($registro->parroquia)?$registro->parroquia:old('parroquia')}}">
+                        <select name="parroquia" class="form-control js-example-basic-single {{$errors->has('parroquia') ? 'is-invalid' : ''}}" value="{{isset($registro->parroquia)?$registro->parroquia:old('parroquia')}}">
                         <option value="">Parroquia</option>
-                        <option value="isla_de_toas" {{ (isset($registro->parroquia) && $registro->parroquia == 'isla_de_toas') ? 'selected' : '' }}>Isla de Toas</option>
-                        <option value="monagas" {{ (isset($registro->parroquia) && $registro->parroquia == 'monagas') ? 'selected' : '' }}>Monagas</option>
-                        <option value="san_timoteo" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_timoteo') ? 'selected' : '' }}>San Timoteo</option>
-                        <option value="general_urdaneta" {{ (isset($registro->parroquia) && $registro->parroquia == 'general_urdaneta') ? 'selected' : '' }}>General Urdaneta</option>
-                        <option value="libertador" {{ (isset($registro->parroquia) && $registro->parroquia == 'libertador') ? 'selected' : '' }}>Libertador</option>
-                        <option value="marcelino_briceño" {{ (isset($registro->parroquia) && $registro->parroquia == 'marcelino_briceño') ? 'selected' : '' }}>Marcelino Briceño</option>
-                        <option value="nuevo" {{ (isset($registro->parroquia) && $registro->parroquia == 'nuevo') ? 'selected' : '' }}>Nuevo</option>
-                        <option value="manuel_guanipa_matos" {{ (isset($registro->parroquia) && $registro->parroquia == 'manuel_guanipa_matos') ? 'selected' : '' }}>Manuel Guanipa Matos</option>
-                        <option value="ambrosio" {{ (isset($registro->parroquia) && $registro->parroquia == 'ambrosio') ? 'selected' : '' }}>Ambrosio</option>
-                        <option value="carmen_herrera" {{ (isset($registro->parroquia) && $registro->parroquia == 'carmen_herrera') ? 'selected' : '' }}>Carmen Herrera</option>
-                        <option value="la_rosa" {{ (isset($registro->parroquia) && $registro->parroquia == 'la_rosa') ? 'selected' : '' }}>La Rosa</option>
-                        <option value="german_rios_linares" {{ (isset($registro->parroquia) && $registro->parroquia == 'german_rios_linares') ? 'selected' : '' }}>Germán Ríos Linares</option>
-                        <option value="san_benito" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_benito') ? 'selected' : '' }}>San Benito</option>
-                        <option value="romulo_betancourt" {{ (isset($registro->parroquia) && $registro->parroquia == 'romulo_betancourt') ? 'selected' : '' }}>Rómulo Betancourt</option>
-                        <option value="jorge_hernandez" {{ (isset($registro->parroquia) && $registro->parroquia == 'jorge_hernandez') ? 'selected' : '' }}>Jorge Hernández</option>
-                        <option value="punta_gorda" {{ (isset($registro->parroquia) && $registro->parroquia == 'punta_gorda') ? 'selected' : '' }}>Punta Gorda</option>
-                        <option value="aristides_calvani" {{ (isset($registro->parroquia) && $registro->parroquia == 'aristides_calvani') ? 'selected' : '' }}>Arístides Calvani</option>
-                        <option value="encontrados" {{ (isset($registro->parroquia) && $registro->parroquia == 'encontrados') ? 'selected' : '' }}>Encontrados</option>
-                        <option value="udon_perez" {{ (isset($registro->parroquia) && $registro->parroquia == 'udon_perez') ? 'selected' : '' }}>Udón Pérez</option>
-                        <option value="veritas" {{ (isset($registro->parroquia) && $registro->parroquia == 'veritas') ? 'selected' : '' }}>Veritas</option>
-                        <option value="moralito" {{ (isset($registro->parroquia) && $registro->parroquia == 'moralito') ? 'selected' : '' }}>Moralito</option>
-                        <option value="san_carlos_del_zulia" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_carlos_del_zulia') ? 'selected' : '' }}>San Carlos del Zulia</option>
-                        <option value="santa_cruz_del_zulia" {{ (isset($registro->parroquia) && $registro->parroquia == 'santa_cruz_del_zulia') ? 'selected' : '' }}>Santa Cruz del Zulia</option>
-                        <option value="santa_barbara" {{ (isset($registro->parroquia) && $registro->parroquia == 'santa_barbara') ? 'selected' : '' }}>Santa Bárbara</option>
-                        <option value="urribarri" {{ (isset($registro->parroquia) && $registro->parroquia == 'urribarri') ? 'selected' : '' }}>Urribarrí</option>
-                        <option value="agustin_codazzi" {{ (isset($registro->parroquia) && $registro->parroquia == 'agustin_codazzi') ? 'selected' : '' }}>Agustín Codazzi</option>
-                        <option value="carlos_quevedo" {{ (isset($registro->parroquia) && $registro->parroquia == 'carlos_quevedo') ? 'selected' : '' }}>Carlos Quevedo</option>
-                        <option value="francisco_javier_pulgar" {{ (isset($registro->parroquia) && $registro->parroquia == 'francisco_javier_pulgar') ? 'selected' : '' }}>Francisco Javier Pulgar</option>
-                        <option value="simon_rodriguez" {{ (isset($registro->parroquia) && $registro->parroquia == 'simon_rodriguez') ? 'selected' : '' }}>Simón Rodríguez</option>
-                        <option value="la_concepcion" {{ (isset($registro->parroquia) && $registro->parroquia == 'la_concepcion') ? 'selected' : '' }}>La Concepción</option>
-                        <option value="san_jose" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_jose') ? 'selected' : '' }}>San José</option>
-                        <option value="mariano_parra_leon" {{ (isset($registro->parroquia) && $registro->parroquia == 'mariano_parra_leon') ? 'selected' : '' }}>Mariano Parra León</option>
-                        <option value="jose_ramon_yepes" {{ (isset($registro->parroquia) && $registro->parroquia == 'jose_ramon_yepes') ? 'selected' : '' }}>José Ramón Yépez</option>
-                        <option value="jesus_maria_semprun" {{ (isset($registro->parroquia) && $registro->parroquia == 'jesus_maria_semprun') ? 'selected' : '' }}>Jesús María Semprún</option>
-                        <option value="barí" {{ (isset($registro->parroquia) && $registro->parroquia == 'barí') ? 'selected' : '' }}>Barí</option>
-                        <option value="concepcion" {{ (isset($registro->parroquia) && $registro->parroquia == 'concepcion') ? 'selected' : '' }}>Concepción</option>
-                        <option value="andres_bello" {{ (isset($registro->parroquia) && $registro->parroquia == 'andres_bello') ? 'selected' : '' }}>Andrés Bello</option>
-                        <option value="chiquinquirá" {{ (isset($registro->parroquia) && $registro->parroquia == 'chiquinquira') ? 'selected' : '' }}>Chiquinquirá</option>
-                        <option value="el_carmelo" {{ (isset($registro->parroquia) && $registro->parroquia == 'el_carmelo') ? 'selected' : '' }}>El Carmelo</option>
-                        <option value="potreritos" {{ (isset($registro->parroquia) && $registro->parroquia == 'potreritos') ? 'selected' : '' }}>Potreritos</option>
-                        <option value="libertad" {{ (isset($registro->parroquia) && $registro->parroquia == 'libertad') ? 'selected' : '' }}> Libertad </option>
-                        <option value="paraute" {{ (isset($registro->parroquia) && $registro->parroquia == 'paraute') ? 'selected' : '' }}> Paraute </option>
-                        <option value="eleazar_lopez_contreras" {{ (isset($registro->parroquia) && $registro->parroquia == 'eleazar_lopez_contreras') ? 'selected' : '' }}> Eleazar López Contreras </option>
-                        <option value="campo_lara" {{ (isset($registro->parroquia) && $registro->parroquia == 'campo_lara') ? 'selected' : '' }}> Campo Lara </option>
-                        <option value="el_danto" {{ (isset($registro->parroquia) && $registro->parroquia == 'el_danto') ? 'selected' : '' }}> El Danto </option>
-                        <option value="bartolome_de_las_casas" {{ (isset($registro->parroquia) && $registro->parroquia == 'bartolome_de_las_casas') ? 'selected' : '' }}> Bartolomé de las Casas </option>
-                        <option value="libertad" {{ (isset($registro->parroquia) && $registro->parroquia == 'libertad') ? 'selected' : '' }}> Libertad </option>
-                        <option value="rio_negro" {{ (isset($registro->parroquia) && $registro->parroquia == 'rio_negro') ? 'selected' : '' }}> Río Negro </option>
-                        <option value="san_jose_de_perija" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_jose_de_perija') ? 'selected' : '' }}> San José de Perijá </option>
-                        <option value="san_rafael" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_rafael') ? 'selected' : '' }}> San Rafael </option>
-                        <option value="la_sierrita" {{ (isset($registro->parroquia) && $registro->parroquia == 'la_sierrita') ? 'selected' : '' }}> La Sierrita </option>
-                        <option value="las_parcelas" {{ (isset($registro->parroquia) && $registro->parroquia == 'las_parcelas') ? 'selected' : '' }}> Las Parcelas </option>
-                        <option value="luis_de_vicente" {{ (isset($registro->parroquia) && $registro->parroquia == 'luis_de_vicente') ? 'selected' : '' }}> Luis De Vicente </option>
-                        <option value="monseñor_marcos_sergio_godoy" {{ (isset($registro->parroquia) && $registro->parroquia == 'monseñor_marcos_sergio_godoy') ? 'selected' : '' }}> Monseñor Marcos Sergio Godoy </option>
-                        <option value="ricaurte" {{ (isset($registro->parroquia) && $registro->parroquia == 'ricaurte') ? 'selected' : '' }}> Ricaurte </option>
-                        <option value="tamare" {{ (isset($registro->parroquia) && $registro->parroquia == 'tamare') ? 'selected' : '' }}> Tamare </option>
-                        <option value="antonio_borjas_romero" {{ (isset($registro->parroquia) && $registro->parroquia == 'antonio_borjas_romero') ? 'selected' : '' }}> Antonio Borjas Romero </option>
-                        <option value="bolivar" {{ (isset($registro->parroquia) && $registro->parroquia == 'bolivar') ? 'selected' : '' }}> Bolívar </option>
-                        <option value="cacique_mara" {{ (isset($registro->parroquia) && $registro->parroquia == 'cacique_mara') ? 'selected' : '' }}> Cacique Mara </option>
-                        <option value="caracciolo_parra_perez" {{ (isset($registro->parroquia) && $registro->parroquia == 'caracciolo_parra_perez') ? 'selected' : '' }}> Caracciolo Parra Pérez </option>
-                        <option value="cecilio_acosta" {{ (isset($registro->parroquia) && $registro->parroquia == 'cecilio_acosta') ? 'selected' : '' }}> Cecilio Acosta </option>
-                        <option value="cristo_de_aranza" {{ (isset($registro->parroquia) && $registro->parroquia == 'cristo_de_aranza') ? 'selected' : '' }}> Cristo de Aranza </option>
-                        <option value="coquivacoa" {{ (isset($registro->parroquia) && $registro->parroquia == 'coquivacoa') ? 'selected' : '' }}> Coquivacoa </option>
-                        <option value="chiquinquirá" {{ (isset($registro->parroquia) && $registro->parroquia == 'chiquinquira') ? 'selected' : '' }}> Chiquinquirá </option>
-                        <option value="francisco_eugenio_bustamante" {{ (isset($registro->parroquia) && $registro->parroquia == 'francisco_eugenio_bustamante') ? 'selected' : '' }}> Francisco Eugenio Bustamante </option>
-                        <option value="idelfonzo_vasquez" {{ (isset($registro->parroquia) && $registro->parroquia == 'idelfonzo_vasquez') ? 'selected' : '' }}> Idelfonzo Vásquez </option>
-                        <option value="juana_de_avila" {{ (isset($registro->parroquia) && $registro->parroquia == 'juana_de_avila') ? 'selected' : '' }}> Juana de Ávila </option>
-                        <option value="luis_hurtado_higuera" {{ (isset($registro->parroquia) && $registro->parroquia == 'luis_hurtado_higuera') ? 'selected' : '' }}> Luis Hurtado Higuera </option>
-                        <option value="manuel_dagnino" {{ (isset($registro->parroquia) && $registro->parroquia == 'manuel_dagnino') ? 'selected' : '' }}> Manuel Dagnino </option>
-                        <option value="olegario_villalobos" {{ (isset($registro->parroquia) && $registro->parroquia == 'olegario_villalobos') ? 'selected' : '' }}> Olegario Villalobos </option>
-                        <option value="raul_leoni" {{ (isset($registro->parroquia) && $registro->parroquia == 'raul_leoni') ? 'selected' : '' }}> Raúl Leoni </option>
-                        <option value="santa_lucia" {{ (isset($registro->parroquia) && $registro->parroquia == 'santa_lucia') ? 'selected' : '' }}> Santa Lucía </option>
-                        <option value="san_isidro" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_isidro') ? 'selected' : '' }}> San Isidro </option>
-                        <option value="venancio_pulgar" {{ (isset($registro->parroquia) && $registro->parroquia == 'venancio_pulgar') ? 'selected' : '' }}> Venancio Pulgar </option>
-                        <option value="altagracia" {{ (isset($registro->parroquia) && $registro->parroquia == 'altagracia') ? 'selected' : '' }}> Altagracia </option>
-                        <option value="faria" {{ (isset($registro->parroquia) && $registro->parroquia == 'faria') ? 'selected' : '' }}>Faría</option>
-                        <option value="ana_maria_campos" {{ (isset($registro->parroquia) && $registro->parroquia == 'ana_maria_campos') ? 'selected' : '' }}>Ana María Campos</option>
-                        <option value="san_antonio" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_antonio') ? 'selected' : '' }}>San Antonio</option>
-                        <option value="san_jose" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_jose') ? 'selected' : '' }}>San José</option>
-                        <option value="sinamaica" {{ (isset($registro->parroquia) && $registro->parroquia == 'sinamaica') ? 'selected' : '' }}>Sinamaica</option>
-                        <option value="alta_guajira" {{ (isset($registro->parroquia) && $registro->parroquia == 'alta_guajira') ? 'selected' : '' }}>Alta Guajira</option>
-                        <option value="elias_sanchez_rubio" {{ (isset($registro->parroquia) && $registro->parroquia == 'elias_sanchez_rubio') ? 'selected' : '' }}>Elías Sánchez Rubio</option>
-                        <option value="guajira" {{ (isset($registro->parroquia) && $registro->parroquia == 'guajira') ? 'selected' : '' }}>Guajira</option>
-                        <option value="donaldo_garcia" {{ (isset($registro->parroquia) && $registro->parroquia == 'donaldo_garcia') ? 'selected' : '' }}>Donaldo García</option>
-                        <option value="el_rosario" {{ (isset($registro->parroquia) && $registro->parroquia == 'el_rosario') ? 'selected' : '' }}>El Rosario</option>
-                        <option value="sixto_zambrano" {{ (isset($registro->parroquia) && $registro->parroquia == 'sixto_zambrano') ? 'selected' : '' }}>Sixto Zambrano</option>
-                        <option value="san_francisco" {{ (isset($registro->parroquia) && $registro->parroquia == 'san_francisco') ? 'selected' : '' }}>San Francisco</option>
-                        <option value="el_bajo" {{ (isset($registro->parroquia) && $registro->parroquia == 'el_bajo') ? 'selected' : '' }}>El Bajo</option>
-                        <option value="domitila_flores" {{ (isset($registro->parroquia) && $registro->parroquia == 'domitila_flores') ? 'selected' : '' }}>Domitila Flores</option>
-                        <option value="francisco_ochoa" {{ (isset($registro->parroquia) && $registro->parroquia == 'francisco_ochoa') ? 'selected' : '' }}>Francisco Ochoa</option>
-                        <option value="los_cortijos" {{ (isset($registro->parroquia) && $registro->parroquia == 'los_cortijos') ? 'selected' : '' }}>Los Cortijos</option>
-                        <option value="marcial_hernandez" {{ (isset($registro->parroquia) && $registro->parroquia == 'marcial_hernandez') ? 'selected' : '' }}>Marcial Hernández</option>
-                        <option value="jose_domingos_rus" {{ (isset($registro->parroquia) && $registro->parroquia == 'jose_domingos_rus') ? 'selected' : '' }}>José Domingo Rus</option>
-                        <option value="santa_rita" {{ (isset($registro->parroquia) && $registro->parroquia == 'santa_rita') ? 'selected' : '' }}>Santa Rita</option>
-                        <option value="el_mene" {{ (isset($registro->parroquia) && $registro->parroquia == 'el_mene') ? 'selected' : '' }}>El Mene</option>
-                        <option value="pedro_lucas_urribarri" {{ (isset($registro->parroquia) && $registro->parroquia == 'pedro_lucas_urribarri') ? 'selected' : '' }}>Pedro Lucas Urribarrí</option>
-                        <option value="jose_cenobio_urribarri" {{ (isset($registro->parroquia) && $registro->parroquia == 'jose_cenobio_urribarri') ? 'selected' : '' }}>José Cenobio Urribarrí</option>
-                        <option value="rafael_maria_baralt" {{ (isset($registro->parroquia) && $registro->parroquia == 'rafael_maria_baralt') ? 'selected' : '' }}>Rafael María Baralt</option>
-                        <option value="manuel_manrique" {{ (isset($registro->parroquia) && $registro->parroquia == 'manuel_manrique') ? 'selected' : '' }}>Manuel Manrique</option>
-                        <option value="rafael_urdaneta" {{ (isset($registro->parroquia) && $registro->parroquia == 'rafael_urdaneta') ? 'selected' : '' }}>Rafael Urdaneta</option>
-                        <option value="bobures" {{ (isset($registro->parroquia) && $registro->parroquia == 'bobures') ? 'selected' : '' }}>Bobures</option>
-                        <option value="gibraltar" {{ (isset($registro->parroquia) && $registro->parroquia == 'gibraltar') ? 'selected' : '' }}>Gibraltar</option>
-                        <option value="heras" {{ (isset($registro->parroquia) && $registro->parroquia == 'heras') ? 'selected' : '' }}>Heras</option>
-                        <option value="monseñor_arturo_alvarez" {{ (isset($registro->parroquia) && $registro->parroquia == 'monseñor_arturo_alvarez') ? 'selected' : '' }}>Monseñor Arturo Álvarez</option>
-                        <option value="romulo_gallegos" {{ (isset($registro->parroquia) && $registro->parroquia == 'romulo_gallegos') ? 'selected' : '' }}>Rómulo Gallegos</option>
-                        <option value="el_batey" {{ (isset($registro->parroquia) && $registro->parroquia == 'el_batey') ? 'selected' : '' }}>El Batey</option>
-                        <option value="rafael_urdaneta_valmore_rodriguez" {{ (isset($registro->parroquia) && $registro->parroquia == 'rafael_urdaneta_valmore_rodriguez') ? 'selected' : '' }}>Rafael Urdaneta (Valmore Rodríguez)</option>
-                        <option value="la_victoria" {{ (isset($registro->parroquia) && $registro->parroquia == 'la_victoria') ? 'selected' : '' }}>La Victoria</option>
-                        <option value="raul_cuenca" {{ (isset($registro->parroquia) && $registro->parroquia == 'raul_cuenca') ? 'selected' : '' }}>Raúl Cuenca</option>
+                        <option value="Isla De Toas" {{ (isset($registro->parroquia) && $registro->parroquia == 'Isla De Toas') ? 'selected' : '' }}>Isla De Toas</option>
+                        <option value="Monagas" {{ (isset($registro->parroquia) && $registro->parroquia == 'Monagas') ? 'selected' : '' }}>Monagas</option>
+                        <option value="San Timoteo" {{ (isset($registro->parroquia) && $registro->parroquia == 'San Timoteo') ? 'selected' : '' }}>San Timoteo</option>
+                        <option value="General Urdaneta" {{ (isset($registro->parroquia) && $registro->parroquia == 'General Urdaneta') ? 'selected' : '' }}>General Urdaneta</option>
+                        <option value="Libertador" {{ (isset($registro->parroquia) && $registro->parroquia == 'Libertador') ? 'selected' : '' }}>Libertador</option>
+                        <option value="Marcelino Briceño" {{ (isset($registro->parroquia) && $registro->parroquia == 'Marcelino Briceño') ? 'selected' : '' }}>Marcelino Briceño</option>
+                        <option value="Nuevo" {{ (isset($registro->parroquia) && $registro->parroquia == 'Nuevo') ? 'selected' : '' }}>Nuevo</option>
+                        <option value="Manuel Guanipa Matos" {{ (isset($registro->parroquia) && $registro->parroquia == 'Manuel Guanipa Matos') ? 'selected' : '' }}>Manuel Guanipa Matos</option>
+                        <option value="Ambrosio" {{ (isset($registro->parroquia) && $registro->parroquia == 'Ambrosio') ? 'selected' : '' }}>Ambrosio</option>
+                        <option value="Carmen Herrera" {{ (isset($registro->parroquia) && $registro->parroquia == 'Carmen Herrera') ? 'selected' : '' }}>Carmen Herrera</option>
+                        <option value="La Rosa" {{ (isset($registro->parroquia) && $registro->parroquia == 'La Rosa') ? 'selected' : '' }}>La Rosa</option>
+                        <option value="Germán Ríos Linares" {{ (isset($registro->parroquia) && $registro->parroquia == 'Germán Ríos Linares') ? 'selected' : '' }}>Germán Ríos Linares</option>
+                        <option value="San Benito" {{ (isset($registro->parroquia) && $registro->parroquia == 'San Benito') ? 'selected' : '' }}>San Benito</option>
+                        <option value="Rómulo Betancourt" {{ (isset($registro->parroquia) && $registro->parroquia == 'Rómulo Betancourt') ? 'selected' : '' }}>Rómulo Betancourt</option>
+                        <option value="Jorge Hernández" {{ (isset($registro->parroquia) && $registro->parroquia == 'Jorge Hernández') ? 'selected' : '' }}>Jorge Hernández</option>
+                        <option value="Punta Gorda" {{ (isset($registro->parroquia) && $registro->parroquia == 'Punta Gorda') ? 'selected' : '' }}>Punta Gorda</option>
+                        <option value="Arístides Calvani" {{ (isset($registro->parroquia) && $registro->parroquia == 'Arístides Calvani') ? 'selected' : '' }}>Arístides Calvani</option>
+                        <option value="Encontrados" {{ (isset($registro->parroquia) && $registro->parroquia == 'Encontrados') ? 'selected' : '' }}>Encontrados</option>
+                        <option value="Udón Pérez" {{ (isset($registro->parroquia) && $registro->parroquia == 'Udón Pérez') ? 'selected' : '' }}>Udón Pérez</option>
+                        <option value="Veritas" {{ (isset($registro->parroquia) && $registro->parroquia == 'Veritas') ? 'selected' : '' }}>Veritas</option>
+                        <option value="Moralito" {{ (isset($registro->parroquia) && $registro->parroquia == 'Moralito') ? 'selected' : '' }}>Moralito</option>
+                        <option value="San Carlos Del Zulia" {{ (isset($registro->parroquia) && $registro->parroquia == 'San Carlos Del Zulia') ? 'selected' : '' }}>San Carlos Del Zulia</option>
+                        <option value="Santa Cruz Del Zulia" {{ (isset($registro->parroquia) && $registro->parroquia == 'Santa Cruz Del Zulia') ? 'selected' : '' }}>Santa Cruz Del Zulia</option>
+                        <option value="Santa Bárbara" {{ (isset($registro->parroquia) && $registro->parroquia == 'Santa Bárbara') ? 'selected' : '' }}>Santa Bárbara</option>
+                        <option value="Urribarrí" {{ (isset($registro->parroquia) && $registro->parroquia == 'Urribarrí') ? 'selected' : '' }}>Urribarrí</option>
+                        <option value="Agustín Codazzi" {{ (isset($registro->parroquia) && $registro->parroquia == 'Agustín Codazzi') ? 'selected' : '' }}>Agustín Codazzi</option>
+                        <option value="Carlos Quevedo" {{ (isset($registro->parroquia) && $registro->parroquia == 'Carlos Quevedo') ? 'selected' : '' }}>Carlos Quevedo</option>
+                        <option value="Francisco Javier Pulgar" {{ (isset($registro->parroquia) && $registro->parroquia == 'Francisco Javier Pulgar') ? 'selected' : '' }}>Francisco Javier Pulgar</option>
+                        <option value="Simón Rodríguez" {{ (isset($registro->parroquia) && $registro->parroquia == 'Simón Rodríguez') ? 'selected' : '' }}>Simón Rodríguez</option>
+                        <option value="La Concepción" {{ (isset($registro->parroquia) && $registro->parroquia == 'La Concepción') ? 'selected' : '' }}>La Concepción</option>
+                        <option value="San José" {{ (isset($registro->parroquia) && $registro->parroquia == 'San José') ? 'selected' : '' }}>San José</option>
+                        <option value="Mariano Parra León" {{ (isset($registro->parroquia) && $registro->parroquia == 'Mariano Parra León') ? 'selected' : '' }}>Mariano Parra León</option>
+                        <option value="José Ramón Yépez" {{ (isset($registro->parroquia) && $registro->parroquia == 'José Ramón Yépez') ? 'selected' : '' }}>José Ramón Yépez</option>
+                        <option value="Jesús María Semprún" {{ (isset($registro->parroquia) && $registro->parroquia == 'Jesús María Semprún') ? 'selected' : '' }}>Jesús María Semprún</option>
+                        <option value="Barí" {{ (isset($registro->parroquia) && $registro->parroquia == 'Barí') ? 'selected' : '' }}>Barí</option>
+                        <option value="Concepción" {{ (isset($registro->parroquia) && $registro->parroquia == 'Concepción') ? 'selected' : '' }}>Concepción</option>
+                        <option value="Andrés Bello" {{ (isset($registro->parroquia) && $registro->parroquia == 'Andrés Bello') ? 'selected' : '' }}>Andrés Bello</option>
+                        <option value="Chiquinquirá" {{ (isset($registro->parroquia) && $registro->parroquia == 'Chiquinquirá') ? 'selected' : '' }}>Chiquinquirá</option>
+                        <option value="El Carmelo" {{ (isset($registro->parroquia) && $registro->parroquia == 'El Carmelo') ? 'selected' : '' }}>El Carmelo</option>
+                        <option value="Potreritos" {{ (isset($registro->parroquia) && $registro->parroquia == 'Potreritos') ? 'selected' : '' }}>Potreritos</option>
+                        <option value="Libertad" {{ (isset($registro->parroquia) && $registro->parroquia == 'Libertad') ? 'selected' : '' }}>Libertad</option>
+                        <option value="Paraute" {{ (isset($registro->parroquia) && $registro->parroquia == 'Paraute') ? 'selected' : '' }}>Paraute</option>
+                        <option value="Eleazar López Contreras" {{ (isset($registro->parroquia) && $registro->parroquia == 'Eleazar López Contreras') ? 'selected' : '' }}>Eleazar López Contreras</option>
+                        <option value="Campo Lara" {{ (isset($registro->parroquia) && $registro->parroquia == 'Campo Lara') ? 'selected' : '' }}>Campo Lara</option>
+                        <option value="El Danto" {{ (isset($registro->parroquia) && $registro->parroquia == 'El Danto') ? 'selected' : '' }}>El Danto</option>
+                        <option value="Bartolomé De Las Casas" {{ (isset($registro->parroquia) && $registro->parroquia == 'Bartolomé De Las Casas') ? 'selected' : '' }}>Bartolomé De Las Casas</option>
+                        <option value="Libertad" {{ (isset($registro->parroquia) && $registro->parroquia == 'Libertad') ? 'selected' : '' }}>Libertad</option>
+                        <option value="Río Negro" {{ (isset($registro->parroquia) && $registro->parroquia == 'Río Negro') ? 'selected' : '' }}>Río Negro</option>
+                        <option value="San José De Perijá" {{ (isset($registro->parroquia) && $registro->parroquia == 'San José De Perijá') ? 'selected' : '' }}>San José De Perijá</option>
+                        <option value="San Rafael" {{ (isset($registro->parroquia) && $registro->parroquia == 'San Rafael') ? 'selected' : '' }}>San Rafael</option>
+                        <option value="La Sierrita" {{ (isset($registro->parroquia) && $registro->parroquia == 'La Sierrita') ? 'selected' : '' }}>La Sierrita</option>
+                        <option value="Las Parcelas" {{ (isset($registro->parroquia) && $registro->parroquia == 'Las Parcelas') ? 'selected' : '' }}>Las Parcelas</option>
+                        <option value="Luis De Vicente" {{ (isset($registro->parroquia) && $registro->parroquia == 'Luis De Vicente') ? 'selected' : '' }}>Luis De Vicente</option>
+                        <option value="Monseñor Marcos Sergio Godoy" {{ (isset($registro->parroquia) && $registro->parroquia == 'Monseñor Marcos Sergio Godoy') ? 'selected' : '' }}>Monseñor Marcos Sergio Godoy</option>
+                        <option value="Ricaurte" {{ (isset($registro->parroquia) && $registro->parroquia == 'Ricaurte') ? 'selected' : '' }}>Ricaurte</option>
+                        <option value="Tamare" {{ (isset($registro->parroquia) && $registro->parroquia == 'Tamare') ? 'selected' : '' }}>Tamare</option>
+                        <option value="Antonio Borjas Romero" {{ (isset($registro->parroquia) && $registro->parroquia == 'Antonio Borjas Romero') ? 'selected' : '' }}>Antonio Borjas Romero</option>
+                        <option value="Bolívar" {{ (isset($registro->parroquia) && $registro->parroquia == 'Bolívar') ? 'selected' : '' }}>Bolívar</option>
+                        <option value="Cacique Mara" {{ (isset($registro->parroquia) && $registro->parroquia == 'Cacique Mara') ? 'selected' : '' }}>Cacique Mara</option>
+                        <option value="Caracciolo Parra Pérez" {{ (isset($registro->parroquia) && $registro->parroquia == 'Caracciolo Parra Pérez') ? 'selected' : '' }}>Caracciolo Parra Pérez</option>
+                        <option value="Cecilio Acosta" {{ (isset($registro->parroquia) && $registro->parroquia == 'Cecilio Acosta') ? 'selected' : '' }}>Cecilio Acosta</option>
+                        <option value="Cristo De Aranza" {{ (isset($registro->parroquia) && $registro->parroquia == 'Cristo De Aranza') ? 'selected' : '' }}>Cristo De Aranza</option>
+                        <option value="Coquivacoa" {{ (isset($registro->parroquia) && $registro->parroquia == 'Coquivacoa') ? 'selected' : '' }}>Coquivacoa</option>
+                        <option value="Chiquinquirá" {{ (isset($registro->parroquia) && $registro->parroquia == 'Chiquinquirá') ? 'selected' : '' }}>Chiquinquirá</option>
+                        <option value="Francisco Eugenio Bustamante" {{ (isset($registro->parroquia) && $registro->parroquia == 'Francisco Eugenio Bustamante') ? 'selected' : '' }}>Francisco Eugenio Bustamante</option>
+                        <option value="Idelfonzo Vásquez" {{ (isset($registro->parroquia) && $registro->parroquia == 'Idelfonzo Vásquez') ? 'selected' : '' }}>Idelfonzo Vásquez</option>
+                        <option value="Juana De Ávila" {{ (isset($registro->parroquia) && $registro->parroquia == 'Juana De Ávila') ? 'selected' : '' }}>Juana De Ávila</option>
+                        <option value="Luis Hurtado Higuera" {{ (isset($registro->parroquia) && $registro->parroquia == 'Luis Hurtado Higuera') ? 'selected' : '' }}>Luis Hurtado Higuera</option>
+                        <option value="Manuel Dagnino" {{ (isset($registro->parroquia) && $registro->parroquia == 'Manuel Dagnino') ? 'selected' : '' }}>Manuel Dagnino</option>
+                        <option value="Olegario Villalobos" {{ (isset($registro->parroquia) && $registro->parroquia == 'Olegario Villalobos') ? 'selected' : '' }}>Olegario Villalobos</option>
+                        <option value="Raúl Leoni" {{ (isset($registro->parroquia) && $registro->parroquia == 'Raúl Leoni') ? 'selected' : '' }}>Raúl Leoni</option>
+                        <option value="Santa Lucía" {{ (isset($registro->parroquia) && $registro->parroquia == 'Santa Lucía') ? 'selected' : '' }}>Santa Lucía</option>
+                        <option value="San Isidro" {{ (isset($registro->parroquia) && $registro->parroquia == 'San Isidro') ? 'selected' : '' }}>San Isidro</option>
+                        <option value="Venancio Pulgar" {{ (isset($registro->parroquia) && $registro->parroquia == 'Venancio Pulgar') ? 'selected' : '' }}>Venancio Pulgar</option>
+                        <option value="Altagracia" {{ (isset($registro->parroquia) && $registro->parroquia == 'Altagracia') ? 'selected' : '' }}>Altagracia</option>
+                        <option value="Faría" {{ (isset($registro->parroquia) && $registro->parroquia == 'Faría') ? 'selected' : '' }}>Faría</option>
+                        <option value="Ana María Campos" {{ (isset($registro->parroquia) && $registro->parroquia == 'Ana María Campos') ? 'selected' : '' }}>Ana María Campos</option>
+                        <option value="San Antonio" {{ (isset($registro->parroquia) && $registro->parroquia == 'San Antonio') ? 'selected' : '' }}>San Antonio</option>
+                        <option value="San José" {{ (isset($registro->parroquia) && $registro->parroquia == 'San José') ? 'selected' : '' }}>San José</option>
+                        <option value="Sinamaica" {{ (isset($registro->parroquia) && $registro->parroquia == 'Sinamaica') ? 'selected' : '' }}>Sinamaica</option>
+                        <option value="Alta Guajira" {{ (isset($registro->parroquia) && $registro->parroquia == 'Alta Guajira') ? 'selected' : '' }}>Alta Guajira</option>
+                        <option value="Elías Sánchez Rubio" {{ (isset($registro->parroquia) && $registro->parroquia == 'Elías Sánchez Rubio') ? 'selected' : '' }}>Elías Sánchez Rubio</option>
+                        <option value="Guajira" {{ (isset($registro->parroquia) && $registro->parroquia == 'Guajira') ? 'selected' : '' }}>Guajira</option>
+                        <option value="Donaldo García" {{ (isset($registro->parroquia) && $registro->parroquia == 'Donaldo García') ? 'selected' : '' }}>Donaldo García</option>
+                        <option value="El Rosario" {{ (isset($registro->parroquia) && $registro->parroquia == 'El Rosario') ? 'selected' : '' }}>El Rosario</option>
+                        <option value="Sixto Zambrano" {{ (isset($registro->parroquia) && $registro->parroquia == 'Sixto Zambrano') ? 'selected' : '' }}>Sixto Zambrano</option>
+                        <option value="San Francisco" {{ (isset($registro->parroquia) && $registro->parroquia == 'San Francisco') ? 'selected' : '' }}>San Francisco</option>
+                        <option value="El Bajo" {{ (isset($registro->parroquia) && $registro->parroquia == 'El Bajo') ? 'selected' : '' }}>El Bajo</option>
+                        <option value="Domitila Flores" {{ (isset($registro->parroquia) && $registro->parroquia == 'Domitila Flores') ? 'selected' : '' }}>Domitila Flores</option>
+                        <option value="Francisco Ochoa" {{ (isset($registro->parroquia) && $registro->parroquia == 'Francisco Ochoa') ? 'selected' : '' }}>Francisco Ochoa</option>
+                        <option value="Los Cortijos" {{ (isset($registro->parroquia) && $registro->parroquia == 'Los Cortijos') ? 'selected' : '' }}>Los Cortijos</option>
+                        <option value="Marcial Hernández" {{ (isset($registro->parroquia) && $registro->parroquia == 'Marcial Hernández') ? 'selected' : '' }}>Marcial Hernández</option>
+                        <option value="José Domingo Rus" {{ (isset($registro->parroquia) && $registro->parroquia == 'José Domingo Rus') ? 'selected' : '' }}>José Domingo Rus</option>
+                        <option value="Santa Rita" {{ (isset($registro->parroquia) && $registro->parroquia == 'Santa Rita') ? 'selected' : '' }}>Santa Rita</option>
+                        <option value="El Mene" {{ (isset($registro->parroquia) && $registro->parroquia == 'El Mene') ? 'selected' : '' }}>El Mene</option>
+                        <option value="Pedro Lucas Urribarrí" {{ (isset($registro->parroquia) && $registro->parroquia == 'Pedro Lucas Urribarrí') ? 'selected' : '' }}>Pedro Lucas Urribarrí</option>
+                        <option value="José Cenobio Urribarrí" {{ (isset($registro->parroquia) && $registro->parroquia == 'José Cenobio Urribarrí') ? 'selected' : '' }}>José Cenobio Urribarrí</option>
+                        <option value="Rafael María Baralt" {{ (isset($registro->parroquia) && $registro->parroquia == 'Rafael María Baralt') ? 'selected' : '' }}>Rafael María Baralt</option>
+                        <option value="Manuel Manrique" {{ (isset($registro->parroquia) && $registro->parroquia == 'Manuel Manrique') ? 'selected' : '' }}>Manuel Manrique</option>
+                        <option value="Rafael Urdaneta" {{ (isset($registro->parroquia) && $registro->parroquia == 'Rafael Urdaneta') ? 'selected' : '' }}>Rafael Urdaneta</option>
+                        <option value="Bobures" {{ (isset($registro->parroquia) && $registro->parroquia == 'Bobures') ? 'selected' : '' }}>Bobures</option>
+                        <option value="Gibraltar" {{ (isset($registro->parroquia) && $registro->parroquia == 'Gibraltar') ? 'selected' : '' }}>Gibraltar</option>
+                        <option value="Heras" {{ (isset($registro->parroquia) && $registro->parroquia == 'Heras') ? 'selected' : '' }}>Heras</option>
+                        <option value="Monseñor Arturo Álvarez" {{ (isset($registro->parroquia) && $registro->parroquia == 'Monseñor Arturo Álvarez') ? 'selected' : '' }}>Monseñor Arturo Álvarez</option>
+                        <option value="Rómulo Gallegos" {{ (isset($registro->parroquia) && $registro->parroquia == 'Rómulo Gallegos') ? 'selected' : '' }}>Rómulo Gallegos</option>
+                        <option value="El Batey" {{ (isset($registro->parroquia) && $registro->parroquia == 'El Batey') ? 'selected' : '' }}>El Batey</option>
+                        <option value="Rafael Urdaneta (Valmore Rodríguez)" {{ (isset($registro->parroquia) && $registro->parroquia == 'Rafael Urdaneta (Valmore Rodríguez)') ? 'selected' : '' }}>Rafael Urdaneta (Valmore Rodríguez)</option>
+                        <option value="La Victoria" {{ (isset($registro->parroquia) && $registro->parroquia == 'La Victoria') ? 'selected' : '' }}>La Victoria</option>
+                        <option value="Raúl Cuenca" {{ (isset($registro->parroquia) && $registro->parroquia == 'Raúl Cuenca') ? 'selected' : '' }}>Raúl Cuenca</option>
                         </select>
                     </div>
                     </div>
@@ -276,7 +277,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Categoria</label>
                         <div class="col-sm-9">
-                            <select class="form-control {{$errors->has('categoria_p')?'is-invalid':''}}" name="categoria_p" id="categoria_p">
+                            <select class="form-control js-example-basic-single {{$errors->has('categoria_p')?'is-invalid':''}}" name="categoria_p" id="categoria_p">
                                 <option value="">Seleccione</option>
                                 <option value="Educación" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Educación') ? 'selected' : '' }}>Educación</option>
                                 <option value="Ambiente" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Ambiente') ? 'selected' : '' }}>Ambiente</option>
@@ -303,6 +304,7 @@
                     <i class="ti-file btn-icon-prepend"></i>
                     Editar
                 </button>
+            </form>
                 <!-- Formulario de eliminación -->
                 <form class="delete-form" method="POST" action="{{ route('registro.destroy', $registro->id) }}" style="display:inline;">
                     @csrf
@@ -311,21 +313,25 @@
                         <i class="ti-trash btn-icon-prepend btn-icon"></i>
                         Eliminar registro
                     </button>
-                </form>                
+                </form>
+            </div>
             </div>
         </div>
     </div>
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ asset('vendors/select2/select2.min.js') }}"></script>
+<script src="{{ asset('build/assets/js/select2.js') }}"></script>
 <script>
 $('.delete-button').on('click', function(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
-    const form = $(this).closest('.delete-form'); 
-    const id = $(this).data('id'); 
-    const url = `/admin/registro/${id}`; 
+    const form = $(this).closest('.delete-form');
+    const id = $(this).data('id');
+    const url = `/admin/registro/${id}`;
 
     Swal.fire({
         title: '¿Eliminar el registro?',
@@ -341,10 +347,10 @@ $('.delete-button').on('click', function(event) {
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
-                url: url, 
-                type: 'DELETE', 
+                url: url,
+                type: 'DELETE',
                 data: {
-                    _token: $('meta[name="csrf-token"]').attr('content'), 
+                    _token: $('meta[name="csrf-token"]').attr('content'),
                 },
                 success: function(response) {
                     // Verificar si la respuesta es exitosa

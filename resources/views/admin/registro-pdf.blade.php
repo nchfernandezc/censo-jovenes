@@ -171,7 +171,7 @@
                 <img src="{{ public_path('build/assets/images/logo.png') }}" alt="Logo" style="width: 80px; height: auto;">
             </td>
             <td class="text-cell">
-                <p class="title">FORMULARIO CENSO</p>
+                <p class="title">FORMULARIO DE CENSO</p>
                 <p class="subtitle">
                     <span class="program-blue">Programa</span> 
                     <span class="program-red">Jóvenes Inventores</span>

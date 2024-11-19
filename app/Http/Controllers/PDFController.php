@@ -42,8 +42,36 @@ class PDFController extends Controller
     
         $pdf = Pdf::loadView('admin.registro-pdf', compact('registro', 'user', 'lines'));
     
-        return $pdf->stream('formulario_censo.pdf');
+        return $pdf->stream('registro_'.$registro->id.'.pdf');
     }
+
+    public function generarReporte(Request $request)
+    {
+        // Obtener filtros
+        $filters = $request->only(['parroquia', 'municipio', 'ocupacion', 'grado_p', 'categoria_p']);
+    
+        $registros = Registro::where(function ($query) use ($filters) {
+            foreach ($filters as $key => $value) {
+                if (!empty($value)) {
+                    $query->where($key, $value);
+                }
+            }
+        })->get();
+    
+        if ($registros->isEmpty()) {
+            return redirect()->back()->with([
+                'status' => 'report-error',
+                'error' => 'No se encontraron registros con los filtros seleccionados.'
+            ]);
+        }
+
+        $filtrosAplicados = array_filter($filters);
+    
+        $pdf = PDF::loadView('admin.reporte', compact('registros', 'filtrosAplicados'));
+    
+        return $pdf->stream('reporte.pdf');
+    }
+    
     
 
 }
