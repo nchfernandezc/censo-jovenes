@@ -99,7 +99,7 @@
                     <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Grado de instrucción</label>
                     <div class="col-sm-9">
-                        <select class="form-control js-example-basic-single {{$errors->has('grado')?'is-invalid':''}}" name="grado" id="grado">
+                        <select class="form-control js-example-basic-single {{$errors->has('grado')?'is-invalid':''}}" style="width: 100%;" name="grado" id="grado">
                             <option value="">Seleccione</option>
                             <option value="Bachiller" {{ (isset($registro->grado) && $registro->grado == 'Bachiller') ? 'selected' : '' }}>Bachiller</option>
                             <option value="Estudiante" {{ (isset($registro->grado) && $registro->grado == 'Estudiante') ? 'selected' : '' }}>Estudiante</option>
@@ -120,7 +120,7 @@
                     <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Municipio</label>
                     <div class="col-sm-9">
-                        <select name="municipio" class="form-control js-example-basic-single {{$errors->has('municipio') ? 'is-invalid' : ''}}">
+                        <select name="municipio" style="width: 100%;" class="form-control js-example-basic-single {{$errors->has('municipio') ? 'is-invalid' : ''}}">
                         <option value="">Municipio</option>
                         <option value="Almirante Padilla" {{ (isset($registro->municipio) && $registro->municipio == 'Almirante Padilla') ? 'selected' : '' }}>Almirante Padilla</option>
                         <option value="Baralt" {{ (isset($registro->municipio) && $registro->municipio == 'Baralt') ? 'selected' : '' }}>Baralt</option>
@@ -152,7 +152,7 @@
                     <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Parroquia</label>
                     <div class="col-sm-9">
-                        <select name="parroquia" class="form-control js-example-basic-single {{$errors->has('parroquia') ? 'is-invalid' : ''}}" value="{{isset($registro->parroquia)?$registro->parroquia:old('parroquia')}}">
+                        <select name="parroquia" class="form-control js-example-basic-single {{$errors->has('parroquia') ? 'is-invalid' : ''}}" style="width: 100%;" value="{{isset($registro->parroquia)?$registro->parroquia:old('parroquia')}}">
                         <option value="">Parroquia</option>
                         <option value="Isla De Toas" {{ (isset($registro->parroquia) && $registro->parroquia == 'Isla De Toas') ? 'selected' : '' }}>Isla De Toas</option>
                         <option value="Monagas" {{ (isset($registro->parroquia) && $registro->parroquia == 'Monagas') ? 'selected' : '' }}>Monagas</option>
@@ -277,7 +277,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Categoria</label>
                         <div class="col-sm-9">
-                            <select class="form-control js-example-basic-single {{$errors->has('categoria_p')?'is-invalid':''}}" name="categoria_p" id="categoria_p">
+                            <select class="form-control js-example-basic-single {{$errors->has('categoria_p')?'is-invalid':''}}" name="categoria_p" id="categoria_p" style="width: 100%;">
                                 <option value="">Seleccione</option>
                                 <option value="Educación" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Educación') ? 'selected' : '' }}>Educación</option>
                                 <option value="Ambiente" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Ambiente') ? 'selected' : '' }}>Ambiente</option>
