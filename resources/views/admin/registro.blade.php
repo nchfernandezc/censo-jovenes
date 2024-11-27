@@ -23,10 +23,10 @@
                                     <th style="width: 10%;">Apellido</th>
                                     <th style="width: 5%;">Edad</th>
                                     <th style="width: 10%;">Teléfono</th>
-                                    <th style="width: 15%;">Email</th>
+                                    <th style="width: 10%;">Email</th>
                                     <th style="width: 10%;">Municipio</th>
                                     <th style="width: 10%;">Parroquia</th>
-                                    <th style="width: 13%;">Acciones</th>
+                                    <th style="width: 15%;">Acciones</th>
                                     <th style="width: 2%;"></th>
                                 </tr>
                             </thead>

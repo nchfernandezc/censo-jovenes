@@ -26,7 +26,7 @@
             <div class="row">
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Nombre</label>
+                <label class="col-sm-3 col-form-label">Nombres</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control {{$errors->has('nombre')?'is-invalid':''}}" name="nombre" id="nombre" value="{{isset($registro->nombre)?$registro->nombre:old('nombre')}}">
                     {!!$errors->first('nombre','<div class="invalid-feedback">:message</div>')!!}
@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Apellido</label>
+                <label class="col-sm-3 col-form-label">Apellidos</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control {{$errors->has('apellido')?'is-invalid':''}}" name="apellido" id="apellido" value="{{isset($registro->apellido)?$registro->apellido:old('apellido')}}">
                     {!!$errors->first('apellido','<div class="invalid-feedback">:message</div>')!!}
@@ -48,7 +48,7 @@
             <div class="row">
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Cedula</label>
+                <label class="col-sm-3 col-form-label">Cédula</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control {{$errors->has('cedula')?'is-invalid':''}}" name="cedula" id="cedula" value="{{isset($registro->cedula)?$registro->cedula:old('cedula')}}">
                     {!!$errors->first('cedula','<div class="invalid-feedback">:message</div>')!!}
@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Fecha de nacimiento</label>
+                <label class="col-sm-3 col-form-label">Fecha de Nacimiento</label>
                 <div class="col-sm-9">
                     <input type="date" class="form-control {{$errors->has('edad')?'is-invalid':''}}" name="edad" id="edad" value="{{isset($registro->edad)?$registro->edad:old('edad')}}">
                     {!!$errors->first('fecha de nacimiento','<div class="invalid-feedback">:message</div>')!!}
@@ -70,7 +70,7 @@
             <div class="row">
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Email</label>
+                <label class="col-sm-3 col-form-label">Correo</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control {{$errors->has('email')?'is-invalid':''}}" name="email" id="email" value="{{isset($registro->email)?$registro->email:old('email')}}">
                     {!!$errors->first('email','<div class="invalid-feedback">:message</div>')!!}
@@ -80,7 +80,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Número de teléfono</label>
+                <label class="col-sm-3 col-form-label">Teléfono</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control {{$errors->has('telefono') ? 'is-invalid' : ''}}" name="telefono" id="telefono" value="{{ isset($registro->telefono) ? $registro->telefono : old('telefono') }}">
                     {!! $errors->first('telefono', '<div class="invalid-feedback">:message</div>') !!}
@@ -102,11 +102,16 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Grado de instrucción</label>
+                <label class="col-sm-3 col-form-label">Grado de Instrucción</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control {{$errors->has('grado')?'is-invalid':''}}" name="grado" id="grado" value="{{isset($registro->grado)?$registro->nombre:old('grado')}}">
-                    {!!$errors->first('grado de instruccion','<div class="invalid-feedback">:message</div>')!!}
-                    <div class="invalid-feedback"></div>
+                    <select class="form-control js-example-basic-single {{$errors->has('grado')?'is-invalid':''}}" style="width: 100%;" name="grado" id="grado">
+                        <option value="">Seleccione</option>
+                        <option value="Bachiller" {{ (isset($registro->grado) && $registro->grado == 'Bachiller') ? 'selected' : '' }}>Bachiller</option>
+                        <option value="Estudiante" {{ (isset($registro->grado) && $registro->grado == 'Estudiante') ? 'selected' : '' }}>Estudiante</option>
+                        <option value="Egresado" {{ (isset($registro->grado) && $registro->grado == 'Egresado') ? 'selected' : '' }}>Egresado</option>
+                        <option value="No Estudia" {{ (isset($registro->grado) && $registro->grado == 'No Estudia') ? 'selected' : '' }}>No Estudia</option>
+                    </select>
+                    {!!$errors->first('grado','<div class="invalid-feedback">:message</div>')!!}
                 </div>
                 </div>
             </div>
@@ -120,7 +125,7 @@
                 <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Municipio</label>
                 <div class="col-sm-9">
-                    <select name="municipio" class="form-control {{$errors->has('municipio') ? 'is-invalid' : ''}}" value="{{isset($registro->municipio)?$registro->municipio:old('municipio')}}">
+                    <select name="municipio" style="width: 100%;" class="form-control js-example-basic-single {{$errors->has('municipio') ? 'is-invalid' : ''}}">
                     <option value="">Municipio</option>
                     <option value="Almirante Padilla">Almirante Padilla</option>
                     <option value="Baralt">Baralt</option>
@@ -152,7 +157,7 @@
                 <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Parroquia</label>
                 <div class="col-sm-9">
-                    <select name="parroquia" class="form-control {{$errors->has('parroquia') ? 'is-invalid' : ''}}" value="{{isset($registro->parroquia)?$registro->parroquia:old('parroquia')}}">
+                    <select name="parroquia" class="form-control js-example-basic-single {{$errors->has('parroquia') ? 'is-invalid' : ''}}" style="width: 100%;" value="{{isset($registro->parroquia)?$registro->parroquia:old('parroquia')}}">
                     <option value="">Parroquia</option>
                     <option value="Isla De Toas">Isla De Toas</option>
                     <option value="Monagas">Monagas</option>
@@ -275,20 +280,27 @@
             <div class="row">
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Categoria</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control {{$errors->has('categoria_p')?'is-invalid':''}}" name="categoria_p" id="categoria_p" value="{{isset($registro->categoria_p)?$registro->categoria_p:old('categoria_p')}}">
-                    {!!$errors->first('categoria','<div class="invalid-feedback">:message</div>')!!}
-                    <div class="invalid-feedback"></div>
-                </div>
+                    <label class="col-sm-3 col-form-label">Categoria</label>
+                    <div class="col-sm-9">
+                        <select class="form-control js-example-basic-single {{$errors->has('categoria_p')?'is-invalid':''}}" name="categoria_p" id="categoria_p" style="width: 100%;">
+                            <option value="">Seleccione</option>
+                            <option value="Educación" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Educación') ? 'selected' : '' }}>Educación</option>
+                            <option value="Ambiente" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Ambiente') ? 'selected' : '' }}>Ambiente</option>
+                            <option value="Infraestructura" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Infraestructura') ? 'selected' : '' }}>Infraestructura</option>
+                            <option value="Salud" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Salud') ? 'selected' : '' }}>Salud</option>
+                            <option value="Tecnología" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Tecnología') ? 'selected' : '' }}>Tecnología</option>
+                            <option value="Otro" {{ (isset($registro->categoria_p) && $registro->categoria_p == 'Otro') ? 'selected' : '' }}>Otro</option>
+                        </select>
+                        {!!$errors->first('categoria_p','<div class="invalid-feedback">:message</div>')!!}
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Descripcion</label>
+                <label class="col-sm-3 col-form-label">Descripción</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control {{$errors->has('descripcion_p')?'is-invalid':''}}" name="descripcion_p" id="descripcion_p" value="{{isset($registro->descripcion_p)?$registro->descripcion_p:old('descripcion_p')}}">
-                    {!!$errors->first('descripcion','<div class="invalid-feedback">:message</div>')!!}
+                    <textarea class="form-control {{$errors->has('descripcion_p')?'is-invalid':''}}" name="descripcion_p" id="descripcion_p" style="height: 150px;">{{isset($registro->descripcion_p)?$registro->descripcion_p:old('descripcion_p')}}</textarea>
+                    {!!$errors->first('descripcion_p','<div class="invalid-feedback">:message</div>')!!}
                     <div class="invalid-feedback"></div>
                 </div>
                 </div>

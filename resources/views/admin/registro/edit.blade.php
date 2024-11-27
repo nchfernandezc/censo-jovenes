@@ -21,7 +21,7 @@
                 <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Nombre</label>
+                    <label class="col-sm-3 col-form-label">Nombres</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control {{$errors->has('nombre')?'is-invalid':''}}" name="nombre" id="nombre" value="{{isset($registro->nombre)?$registro->nombre:old('nombre')}}">
                         {!!$errors->first('nombre','<div class="invalid-feedback">:message</div>')!!}
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Apellido</label>
+                    <label class="col-sm-3 col-form-label">Apellidos</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control {{$errors->has('apellido')?'is-invalid':''}}" name="apellido" id="apellido" value="{{isset($registro->apellido)?$registro->apellido:old('apellido')}}">
                         {!!$errors->first('apellido','<div class="invalid-feedback">:message</div>')!!}
@@ -43,7 +43,7 @@
                 <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Cedula</label>
+                    <label class="col-sm-3 col-form-label">Cédula</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control {{$errors->has('cedula')?'is-invalid':''}}" name="cedula" id="cedula" value="{{isset($registro->cedula)?$registro->cedula:old('cedula')}}">
                         {!!$errors->first('cedula','<div class="invalid-feedback">:message</div>')!!}
@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Fecha de nacimiento</label>
+                    <label class="col-sm-3 col-form-label">Fecha de Nacimiento</label>
                     <div class="col-sm-9">
                         <input type="date" class="form-control {{$errors->has('edad')?'is-invalid':''}}" name="edad" id="edad" value="{{isset($registro->edad)?$registro->edad:old('edad')}}">
                         {!!$errors->first('fecha de nacimiento','<div class="invalid-feedback">:message</div>')!!}
@@ -65,7 +65,7 @@
                 <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Email</label>
+                    <label class="col-sm-3 col-form-label">Correo</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control {{$errors->has('email')?'is-invalid':''}}" name="email" id="email" value="{{isset($registro->email)?$registro->email:old('email')}}">
                         {!!$errors->first('email','<div class="invalid-feedback">:message</div>')!!}
@@ -75,7 +75,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Numero de teléfono</label>
+                    <label class="col-sm-3 col-form-label">Teléfono</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control {{$errors->has('telefono')?'is-invalid':''}}" name="telefono" id="telefono" value="{{isset($registro->telefono)?$registro->telefono:old('telefono')}}">
                         {!!$errors->first('telefono','<div class="invalid-feedback">:message</div>')!!}
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Grado de instrucción</label>
+                    <label class="col-sm-3 col-form-label">Grado de Instrucción</label>
                     <div class="col-sm-9">
                         <select class="form-control js-example-basic-single {{$errors->has('grado')?'is-invalid':''}}" style="width: 100%;" name="grado" id="grado">
                             <option value="">Seleccione</option>
@@ -270,7 +270,7 @@
                 </div>
                 <br>
                 <p class="card-description">
-                Detalles de el Proyecto
+                Detalles del Proyecto
                 </p>
                 <div class="row">
                 <div class="col-md-6">
@@ -292,12 +292,12 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Descripcion</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control {{$errors->has('descripcion_p')?'is-invalid':''}}" name="descripcion_p" id="descripcion_p" value="{{isset($registro->descripcion_p)?$registro->descripcion_p:old('descripcion_p')}}">
-                        {!!$errors->first('descripcion','<div class="invalid-feedback">:message</div>')!!}
-                        <div class="invalid-feedback"></div>
-                    </div>
+                        <label class="col-sm-3 col-form-label">Descripción</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control {{$errors->has('descripcion_p')?'is-invalid':''}}" name="descripcion_p" id="descripcion_p" style="height: 150px;">{{isset($registro->descripcion_p)?$registro->descripcion_p:old('descripcion_p')}}</textarea>
+                            {!!$errors->first('descripcion_p','<div class="invalid-feedback">:message</div>')!!}
+                            <div class="invalid-feedback"></div>
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-icon-text" style="margin-right: 5px;">
